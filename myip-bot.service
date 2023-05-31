@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram bot that returns machine ip address
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/local/bin/myip-bot
+Restart=always
+
+EnvironmentFile=/etc/default/myip-bot.env
+
+[Install]
+WantedBy=multi-user.target
