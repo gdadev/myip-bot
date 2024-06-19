@@ -39,7 +39,7 @@ func main() {
 
 	var (
 		menu    = &tele.ReplyMarkup{ResizeKeyboard: true}
-		btnMyIP = menu.Text("My IP")
+		btnMyIP = menu.Text(cfg.ButtonTxt)
 	)
 
 	if len(cfg.IDWhitelist) > 0 {
@@ -51,7 +51,7 @@ func main() {
 	)
 
 	b.Handle("/start", func(c tele.Context) error {
-		return c.Send("Welcome", menu)
+		return c.Send(cfg.WelcomeMsg, menu)
 	})
 
 	b.Handle(&btnMyIP, func(c tele.Context) error {
