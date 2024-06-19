@@ -13,6 +13,8 @@ import (
 type Config struct {
 	Token       string `validate:"required"`
 	IDWhitelist []int64
+	WelcomeMsg string `default:"Welcome"`
+	ButtonTxt string `default:"My IP"`
 }
 
 func main() {
